@@ -121,6 +121,8 @@ bot.beep(float noteFrequency, long noteDuration); used if you want to make your 
 
 For examples of most of the above, please see the example sketches included with the library.  
 
+Musical notes: It is possiable to create your own music using bot.beep(Frequency, duration); See example 3a for a little example. Or the Super_Mario_Theme sketch in the "more just for fun" examples. Note information can be found in the musical_notes.h file.  
+
 The Adafruit Micro:bit library provides lots of useful features for the LED Matrix, and the BLE functions. Please look at the examples they provide, I've expanded a bit on the images.  
 Adafruit Images:  
 microbit.show(microbit.HEART);  
@@ -139,7 +141,7 @@ microbit.show(ghost); a ghost - pacman anyone(?)
 microbit.show(skull); a skull  
 
 Some of my own images.  
-microbit.show(up_arrow); arrow pointing up.
+microbit.show(up_arrow); arrow pointing up.  
 microbit.show(down_arrow); a arrow pointing down - also a sword from Makecode.  
 microbit.show(right_arrow); you guess it a arrow point right.  
 microbit.show(left_arrow); arrow pointing left.  
@@ -147,8 +149,6 @@ microbit.show(left_arrow); arrow pointing left.
 These images were made using a LED Matrix tool found here:  
 https://www.riyas.org/2013/12/online-led-matrix-font-generator-with.html  
 There is a matrix on the page that can have a custom size (ours is 5 x 5).  
-
-Musical notes: It is possiable to create your own music using bot.beep(Frequency, duration); See example 3a for a little example. Or the Super_Mario_Theme sketch in the "more just for fun" examples. Note information can be found in the musical_notes.h file.  
 
 The last thing:  
 There is a Maqueen_cfg.h included in the library directory.  Currently there are
