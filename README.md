@@ -19,6 +19,7 @@ https://github.com/adafruit/Adafruit_Microbit and learn more about it here:  htt
 3) Install the arduino-BLEPeripheral library by following instructions here:  
 https://github.com/sandeepmistry/arduino-BLEPeripheral   
 4) Install the NewPing Library: https://github.com/eliteio/Arduino_New_Ping  
+5) Install the NRF51 Libary: https://github.com/tipih/NRF51_Radio_library  
 
 Experimental, but useful:
 Sparkfun's Mag3110 compass library - https://github.com/sparkfun/SparkFun_MAG3110_Breakout_Board_Arduino_Library   
@@ -34,7 +35,7 @@ The Maqueen robot has 4 Neopixels on PIN 15, currently this is not supported in 
 
 The IR remote sensor works, but not as well as it could. I am using a very old method to read the IR data, using pulseIn. This works, but is limited.  
 
-The biggest issue I've run across so far is no peer-to-peer support in the Arduino IDE.  I am not even sure how it works. Again this is a non-issue with Makecode.  
+---The biggest issue I've run across so far is no peer-to-peer support in the Arduino IDE.  I am not even sure how it works. Again this is a non-issue with Makecode.---  
 BLE works, and Adafruit does provide an app for Android phones that support BLE. I was able to setup remote control via that app, and using one of Adafruits base sketches.  
 https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect   
 There is probably an app for IOS as well, but I don't own a IOS device.  
