@@ -34,18 +34,18 @@ Generally I see this issue when I try to open the serial port before it's ready.
 The Maqueen robot has 4 Neopixels on PIN 15, currently this is not supported in any Neopixel library that I have seen. The Neopixels do work with the Makecode IDE, so this is a limitation of Arduino/Neopixel Libraries (I believe).  
 
 The IR remote sensor works, but not as well as it could. I am using a very old method to read the IR data, using pulseIn. This works, but is limited.  
-
----The biggest issue I've run across so far is no peer-to-peer support in the Arduino IDE.  I am not even sure how it works. Again this is a non-issue with Makecode.---  
+ 
 BLE works, and Adafruit does provide an app for Android phones that support BLE. I was able to setup remote control via that app, and using one of Adafruits base sketches.  
 https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect   
 There is probably an app for IOS as well, but I don't own a IOS device.  
+
+Peer-To-Peer feature added, see example5a and the related gamepad_sender example  
 
 ## Usage
 
 General Usage:  
 
-'''
-#include <Maqueen.h>
+```#include <Maqueen.h>
 Maqueen bot;
 
 void setup() {
@@ -55,13 +55,11 @@ bot.begin();
 
 void loop() {
 //program here
-}
-'''
+}```
 
 The Maqueen library includes both the Adafruit_Microbit.h library and the NewPing.h library, you don't need to include them in your sketch, but you do need to invoke the classes.  
 
-'''
-#include <Maqueen.h>
+```#include <Maqueen.h>
 Maqueen bot;
 
 //NewPing.h and Adafruit_Microbit.h are inlcuded the library header
@@ -73,8 +71,8 @@ void setup() {
 bot.begin(); //inits the Maqueen robot
 microbit.begin(); // inits Adafruits library
 }
-.....
-'''
+.....```
+
 
 These are defined in the library, and can be used as needed in your sketch.  
 LED1 left led (red).  
@@ -179,7 +177,8 @@ https://kd8bxp.blogspot.com/
 
 ## Credits
 
-Copyright (c) 2018 LeRoy Miller
+Copyright (c) 2018-2020 LeRoy Miller
+Ken551 pull request #2 (merged July 18, 2020) Thanks
 
 ## License
 
