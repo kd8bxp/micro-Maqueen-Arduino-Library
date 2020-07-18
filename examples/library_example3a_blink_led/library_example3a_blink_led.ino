@@ -29,20 +29,20 @@ Maqueen bot;
 
 //NewPing.h and Adafruit_Microbit.h are inlcuded the library header
 //but still need to be invoked here.
-Adafruit_Microbit_Matrix microbit;
+Adafruit_Microbit microbit;
 
 void setup() {
   Serial.begin(9600);
-bot.begin(); //must include the begin (otherwise things don't work)  
-microbit.begin();
+  bot.begin(); //must include the begin (otherwise things don't work)  
+  microbit.matrix.begin();
 
-while (bot.readA()) { //wait for BTNA to be pushed
-microbit.print("A");
-}
+  while (bot.readA()) { //wait for BTNA to be pushed
+    microbit.matrix.print("A");
+  }
 
-microbit.clear();
-microbit.show(smile_bmp);
-}
+  microbit.matrix.clear();
+  microbit.matrix.show(smile_bmp);
+ }
 
 void loop() {
   digitalWrite(LED1,HIGH); //LED1 is defined in the library (left led)

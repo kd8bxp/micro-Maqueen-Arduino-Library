@@ -29,9 +29,9 @@ void setup() {
   microbit.BTLESerial.setLocalName("microbit");
 
   // Start LED matrix driver after radio (required)
-  microbit.begin();
-microbit.clear();
-microbit.show(smile_bmp);
+  microbit.matrix.begin();
+  microbit.matrix.clear();
+  microbit.matrix.show(smile_bmp);
 }
 
 /**************************************************************************/
@@ -81,4 +81,3 @@ switch (buttnum) {
   }
  }
 }
-

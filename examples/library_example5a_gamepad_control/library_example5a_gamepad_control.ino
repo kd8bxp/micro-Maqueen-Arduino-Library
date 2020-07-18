@@ -30,7 +30,7 @@ https://kd8bxp.blogspot.com/
 #include "NRF51_Radio_library.h" //https://github.com/tipih/NRF51_Radio_library
 
 Maqueen bot;
-Adafruit_Microbit_Matrix microbit;      
+Adafruit_Microbit microbit;      
 NRF51_Radio MicrobitRadio = NRF51_Radio();  
 
 static long currentMillis;
@@ -42,19 +42,19 @@ void setup() {
   Serial.begin(115200);
   bot.begin();
   Serial.println("Gamepad Control demo ready!");
-  microbit.begin();
+  microbit.matrix.begin();
   MicrobitRadio.enable();
   MicrobitRadio.setGroup(10);
   MicrobitRadio.setFrequencyBand(50);
   Serial.println("Radio running");
-  microbit.clear();
-microbit.show(smile_bmp);
+  microbit.matrix.clear();
+  microbit.matrix.show(smile_bmp);
 }
 
 void loop() {
  
 //Check if there is any data in the buffer
- FrameBuffer* myData = MicrobitRadio.recv();
+  FrameBuffer* myData = MicrobitRadio.recv();
   if (myData != NULL) {
     Serial.print(myData->length);
     Serial.print("    ");

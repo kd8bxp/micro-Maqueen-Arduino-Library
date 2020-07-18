@@ -26,15 +26,15 @@ https://kd8bxp.blogspot.com/
 #include <Maqueen.h>
 Maqueen bot;
 
-Adafruit_Microbit_Matrix microbit;
+Adafruit_Microbit microbit;
 
 int byteValue;
 
 void setup() {
-   Serial.begin(9600);
+  Serial.begin(9600);
   bot.begin();
-  microbit.begin();
-  microbit.clear();
+  microbit.matrix.begin();
+  microbit.matrix.clear();
 
 }
 
@@ -48,10 +48,10 @@ void loop() {
    * A lot of trail and error has to be used.
    */
 
- byteValue = bot.readIR();
- if (byteValue != 0) {
-Serial.println(byteValue);
-microbit.print(byteValue);
-delay(100);
- }
+  byteValue = bot.readIR();
+  if (byteValue != 0) {
+    Serial.println(byteValue);
+    microbit.matrix.print(byteValue);
+    delay(100);
+  }
 }
