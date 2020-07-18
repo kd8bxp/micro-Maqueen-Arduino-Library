@@ -29,18 +29,18 @@ Maqueen bot;
 
 //NewPing.h and Adafruit_Microbit.h are inlcuded the library header
 //but still need to be invoked here.
-Adafruit_Microbit_Matrix microbit;
+Adafruit_Microbit microbit;
 
 void setup() {
   bot.begin();
-microbit.begin();
+microbit.matrix.begin();
 
   while (bot.readA()) { //wait for BTNA to be pushed
-microbit.print("A");
+microbit.matrix.print("A");
 }
 
-microbit.clear();
-microbit.show(smile_bmp);
+microbit.matrix.clear();
+microbit.matrix.show(smile_bmp);
 
 //Spin the motor to the right
 bot.motorRun(M1, CW, 50); //Motor Number, direction, speed (PWM)

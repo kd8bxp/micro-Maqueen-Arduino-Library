@@ -44,51 +44,49 @@ Maqueen bot;
 //NewPing.h and Adafruit_Microbit.h are inlcuded the library header
 //but still need to be invoked here.
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
-Adafruit_Microbit_Matrix microbit;
+Adafruit_Microbit microbit;
 
 int byteValue;
 int speed = 50; //50% of full speed
 
 void setup() {
-   Serial.begin(9600);
+  Serial.begin(9600);
   bot.begin();
-  microbit.begin();
-  microbit.clear();
-  microbit.show(smile_bmp);
+  microbit.matrix.begin();
+  microbit.matrix.clear();
+  microbit.matrix.show(smile_bmp);
 
 }
 
 void loop() {
  byteValue = bot.readIR();
 
-switch (byteValue) {
-  case 0:
-  bot.stop();
-  break;
-  case UP:
-  bot.setSpeed(speed);
-  bot.forward();
-  break;
-  case DOWN:
-  bot.setSpeed(speed);
-  bot.backward();
-  break;
-  case LEFT:
-  bot.setSpeed(speed);
-  bot.spinLeft();
-  break;
-  case RIGHT:
-  bot.setSpeed(speed);
-  bot.spinRight();
-  break;
-  case SETUP:
-  bot.stop();
-  break;
-  default:
-  bot.stop();
-  break;
+  switch (byteValue) {
+    case 0:
+      bot.stop();
+      break;
+    case UP:
+      bot.setSpeed(speed);
+      bot.forward();
+      break;
+    case DOWN:
+      bot.setSpeed(speed);
+      bot.backward();
+      break;
+    case LEFT:
+      bot.setSpeed(speed);
+      bot.spinLeft();
+      break;
+    case RIGHT:
+      bot.setSpeed(speed);
+      bot.spinRight();
+      break;
+    case SETUP:
+      bot.stop();
+      break;
+    default:
+      bot.stop();
+      break;
+  }
+  byteValue = 0; 
 }
- byteValue = 0; 
-}
-
-

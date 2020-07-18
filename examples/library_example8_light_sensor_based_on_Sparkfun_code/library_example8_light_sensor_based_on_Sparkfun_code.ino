@@ -25,7 +25,7 @@
 #include <Maqueen.h>
 
 Maqueen bot;
-Adafruit_Microbit_Matrix microbit;
+Adafruit_Microbit microbit;
 // Any reading over this value will turn on the output LED
 const unsigned int THRESHOLD = 10;
 
@@ -43,34 +43,11 @@ void setup() {
 
   // Start serial communications
   Serial.begin(9600);
-microbit.begin();
-bot.begin();
+  microbit.matrix.begin();
+  bot.begin();
   // Set P junction pin to output low (GND)
   pinMode(P_JNCT_PIN, OUTPUT);
   digitalWrite(P_JNCT_PIN, LOW);
-
-  
-}
-
-void loop() {
-
-  // Read the amount of light falling on the LED
-  readLED();
-
-  // Print out the raw discharge time
-  //Serial.println(sen_time);
-  int number = sen_time/500;
-microbit.print(number);
- Serial.println(number);
-  // If the light is below a certain level (discharge time is over the
-  // threshold), turn on the output LED
-  if ( number < THRESHOLD ) {
-    bot.setSpeed(30);
-    bot.forward();
-  } else {
-    bot.stop();
-  }
-  
 }
 
 void readLED() {
@@ -94,8 +71,27 @@ void readLED() {
       break;
     }
 
+  }
+
+  sen_time = t;
 }
 
-sen_time = t;
+void loop() {
 
+  // Read the amount of light falling on the LED
+  readLED();
+
+  // Print out the raw discharge time
+  //Serial.println(sen_time);
+  int number = sen_time/500;
+  microbit.matrix.print(number);
+  Serial.println(number);
+  // If the light is below a certain level (discharge time is over the
+  // threshold), turn on the output LED
+  if ( number < THRESHOLD ) {
+    bot.setSpeed(30);
+    bot.forward();
+  } else {
+    bot.stop();
+  }
 }
