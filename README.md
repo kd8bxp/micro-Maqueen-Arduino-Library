@@ -1,3 +1,12 @@
+# NOTE: 
+This was made with the v1 Maqueen Robot, and the Original Micro:Bit - It should still work with this hardware.  
+
+But since DF Robot and BBC Micro:Bit have both moved to different newer devices. This will not work on the new stuff.  
+
+I am archiving this repository, for the sake of history, but will no long be maintaining it or updating it.  
+Thanks  
+-LeRoy Sep 5, 2023  
+
 # micro:Maqueen Library for Arduino
 
 A simple library for the DF Robot micro:Maqueen robot, using a BBC Micro:Bit controller.  
